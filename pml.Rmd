@@ -37,6 +37,7 @@ The tree model:
 modTree
 ```
 
+Since the accuracy is about 80% by 10-fold cross validation, we expect the out-of-sample error to be about 20%.
 
 Predictions:
 ```{r}

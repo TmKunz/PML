@@ -232,7 +232,7 @@ modTree &lt;- train(classe ~ ., method = &quot;rpart&quot;, data = Train2, trCon
 ## No pre-processing
 ## Resampling: Cross-Validated (10 fold) 
 ## 
-## Summary of sample sizes: 17659, 17659, 17660, 17660, 17659, 17660, ... 
+## Summary of sample sizes: 17660, 17659, 17660, 17661, 17659, 17660, ... 
 ## 
 ## Resampling results
 ## 
@@ -242,6 +242,8 @@ modTree &lt;- train(classe ~ ., method = &quot;rpart&quot;, data = Train2, trCon
 ## Tuning parameter &#39;cp&#39; was held constant at a value of 0.01
 ## 
 </code></pre>
+
+<p>Since the accuracy is about 80% by 10-fold cross validation, we expect the out-of-sample error to be about 20%.</p>
 
 <p>Predictions:</p>
 

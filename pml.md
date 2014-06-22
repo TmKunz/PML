@@ -66,7 +66,7 @@ modTree
 ## No pre-processing
 ## Resampling: Cross-Validated (10 fold) 
 ## 
-## Summary of sample sizes: 17659, 17659, 17660, 17660, 17659, 17660, ... 
+## Summary of sample sizes: 17660, 17659, 17660, 17661, 17659, 17660, ... 
 ## 
 ## Resampling results
 ## 
@@ -78,6 +78,7 @@ modTree
 ```
 
 
+Since the accuracy is about 80% by 10-fold cross validation, we expect the out-of-sample error to be about 20%.
 
 Predictions:
 

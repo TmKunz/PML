@@ -40,12 +40,43 @@ library(caret)
 
 ```r
 tc <- trainControl("cv", 10)
-modTree <- train(classe ~ ., method = "rpart", data = Train2, trControl = tc)
+rpart.grid <- expand.grid(.cp = 0.01)
+modTree <- train(classe ~ ., method = "rpart", data = Train2, trControl = tc, 
+    tuneGrid = rpart.grid)
 ```
 
 ```
 ## Loading required package: rpart
 ```
+
+
+The tree model:
+
+```r
+modTree
+```
+
+```
+## CART 
+## 
+## 19622 samples
+##    56 predictors
+##     5 classes: 'A', 'B', 'C', 'D', 'E' 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (10 fold) 
+## 
+## Summary of sample sizes: 17659, 17659, 17660, 17660, 17659, 17660, ... 
+## 
+## Resampling results
+## 
+##   Accuracy  Kappa  Accuracy SD  Kappa SD
+##   0.8       0.8    0.02         0.02    
+## 
+## Tuning parameter 'cp' was held constant at a value of 0.01
+## 
+```
+
 
 
 Predictions:
@@ -55,7 +86,7 @@ predict(modTree, newdata = Test2)
 ```
 
 ```
-##  [1] A A C A A C C C A A C C B A C B B A A B
+##  [1] B A C A A E D C A A C C B A E E E A A B
 ## Levels: A B C D E
 ```
 

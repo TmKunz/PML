@@ -28,8 +28,15 @@ Train with Trees with 10-fold cross validation
 ```{r results="hide"}
 library(caret)
 tc <- trainControl("cv",10)
-modTree <- train(classe~., method="rpart", data=Train2, trControl=tc)
+rpart.grid <- expand.grid(.cp=0.01)
+modTree <- train(classe~., method="rpart", data=Train2, trControl=tc, tuneGrid=rpart.grid)
 ```
+
+The tree model:
+```{r}
+modTree
+```
+
 
 Predictions:
 ```{r}
